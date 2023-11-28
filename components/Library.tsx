@@ -2,11 +2,16 @@
 import { TbPlaylist } from "react-icons/tb";
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { useState } from "react";
 
 const Library = () => {
-  const onClick = () => {
+  const [showMore, setShowMore] = useState(false);
+
+  const onClickAdd = () => {
     // Handle upload
   };
+
+  const onClickShow = () => {};
 
   return (
     <div className="flex flex-col">
@@ -16,10 +21,18 @@ const Library = () => {
           <p className=" font-medium text-md">Your Library</p>
         </div>
         <div className="inline-flex items-center gap-x-2">
-          <div className=" p-1.5 rounded-full bg-neutral-900 cursor-pointer text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800/60 transition">
-            <AiOutlinePlus size={21} onClick={onClick} />
+          <div
+            className=" p-1.5 rounded-full bg-neutral-900 flex items-center justify-center cursor-pointer 
+          text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800/60 transition"
+            onClick={onClickAdd}
+          >
+            <AiOutlinePlus size={21} />
           </div>
-          <div className=" p-1.5 rounded-full bg-neutral-900 cursor-pointer text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800/60 transition">
+          <div
+            className="p-1.5 rounded-full bg-neutral-900 flex items-center justify-center cursor-pointer 
+          text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800/60 transition"
+            onClick={onClickShow}
+          >
             <AiOutlineArrowRight size={21} />
           </div>
         </div>
